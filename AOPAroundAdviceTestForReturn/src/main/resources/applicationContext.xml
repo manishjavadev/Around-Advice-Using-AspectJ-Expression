@@ -9,7 +9,7 @@
 	<!-- Enable @AspectJ annotation support -->
 	<aop:aspectj-autoproxy />
 
-	<!-- Employee manager -->
+	<!-- Customer Service -->
 	<bean id="custService" class="com.manish.javadev.servie.impl.CustomerServiceImpl" />
 
 	<!-- Logging Aspect -->
