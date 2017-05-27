@@ -15,9 +15,9 @@ public class SpringDemo {
 		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 		CustomerService manager = (CustomerService) context.getBean("custService");
 
-		CustomerBean empDto = manager.getCustomerById(100);
+		CustomerBean empDto = manager.findCustomerById(100);
 		System.out.println("Customer Bean in Main :" + empDto);
-		List<CustomerBean> empDtoList = manager.getAllCustomer();
+		List<CustomerBean> empDtoList = manager.findAllCustomer();
 		System.out.println("Size Of return list = " + empDtoList.size());
 		for (CustomerBean employeeDTO : empDtoList) {
 			System.out.println(employeeDTO);

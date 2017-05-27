@@ -7,12 +7,12 @@ import com.manish.javadev.model.CustomerBean;
 import com.manish.javadev.servie.CustomerService;
 
 public class CustomerServiceImpl implements CustomerService {
-	public CustomerBean getCustomerById(Integer custId) {
+	public CustomerBean findCustomerById(Integer custId) {
 		System.out.println("Method getCustomerById() called");
 		return new CustomerBean(custId, "Manish", 30);
 	}
 
-	public List<CustomerBean> getAllCustomer() {
+	public List<CustomerBean> findAllCustomer() {
 		List<CustomerBean> empDtoList = new ArrayList<CustomerBean>();
 		CustomerBean empDto1 = new CustomerBean(100, "Manish", 30);
 		empDtoList.add(empDto1);

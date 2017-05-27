@@ -12,16 +12,17 @@ import com.manish.javadev.model.CustomerBean;
 @SuppressWarnings("unchecked")
 @Aspect
 public class LoggingAspect {
-	@Pointcut("execution(* com.manish.javadev.servie.impl.CustomerServiceImpl.getAllCustomer(..))")
+	@Pointcut("execution(* com.manish.javadev.servie.impl.CustomerServiceImpl.findAllCustomer(..))")
 	void pc1() {
 	}
 
-	@Pointcut("execution(* com.manish.javadev.servie.impl.CustomerServiceImpl.getCustomerById(..))")
+	@Pointcut("execution(* com.manish.javadev.servie.impl.CustomerServiceImpl.findCustomerById(..))")
 	void pc2() {
 	}
 
 	@Around("pc1()")
-	public List<CustomerBean> logAroundgetAllCustomer(ProceedingJoinPoint joinPoint) throws Throwable {
+	public List<CustomerBean> logAroundgetAllCustomer(
+			ProceedingJoinPoint joinPoint) throws Throwable {
 		List<CustomerBean> customerBeanList = null;
 		System.out.println("logAroundgetAllCustomer Start");
 		try {
@@ -34,13 +35,14 @@ public class LoggingAspect {
 	}
 
 	@Around("pc2()")
-	public CustomerBean logAroundGetCustomerById(ProceedingJoinPoint joinPoint) throws Throwable {
+	public CustomerBean logAroundGetCustomerById(ProceedingJoinPoint joinPoint)
+			throws Throwable {
 
 		CustomerBean customerBean = null;
 		System.out.println("logAroundGetCustomerById Start");
 		try {
 			customerBean = (CustomerBean) joinPoint.proceed();
-			System.out.println();
+			System.out.println("In Aspect " + customerBean);
 		} finally {
 			// TODO Some Cleanup for your code
 		}

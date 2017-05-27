@@ -5,9 +5,9 @@ import java.util.List;
 import com.manish.javadev.model.CustomerBean;
 
 public interface CustomerService {
-	public CustomerBean getCustomerById(Integer custId);
+	public CustomerBean findCustomerById(Integer custId);
 
-	public List<CustomerBean> getAllCustomer();
+	public List<CustomerBean> findAllCustomer();
 
 	public void createCustomer(CustomerBean customer);
 
